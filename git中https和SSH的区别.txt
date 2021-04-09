@@ -1,0 +1,49 @@
+1.在git中clone项目有两种方式：HTTPS和SSH，它们的区别如下：
+
+HTTPS：不管是谁，拿到url随便clone，但是在push的时候需要验证用户名和密码；
+SSH：clone的项目你必须是拥有者或者管理员，而且需要在clone前添加SSH Key。SSH 在push的时候，是不需要输入用户名的，如果配置SSH key的时候设置了密码，则需要输入密码的，否则直接是不需要输入密码的。
+
+2.在git中使用SSH Key的步骤：
+
+检查电脑是否存在SSH Key：
+$ cd ~/.ssh
+$ ls
+
+如果存在id_rsa.pub 或 id_dsa.pub 文件，说明文件以及存在，跳过创建SSH Key步骤。
+
+创建SSH Key
+$ ssh-keygen -t rsa -C "your_email@example.com"
+return后（出现如下命令）会让你输入push时的密码（不是git登录密码），一般推荐滤过，直接按enter：
+
+Generating public/private rsa key pair.
+
+出现如下命令说明SSH Key创建成功了：
+
+复制代码
+
+Your identification has been saved in /Users/shenheping/.ssh/id_rsa.
+Your public key has been saved in /Users/shenheping/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:sodR52iO2z6KZOaHjElmjlGtTu8UbiZ2p+KXma4Rums shpyoucan@163.com
+The key's randomart image is:
++---[RSA 2048]----+
+| |
+| |
+| . . . |
+| . . . + |
+| .... o S . |
+|..o . O |
+|.X+=X== o |
+|.E%O+.+. |
+|+oo**.ooo. |
++----[SHA256]-----+
+
+查看SSH Key：
+$ cat ~/.ssh/id_rsa.pub
+
+将查看的SSH Key赋值到git中设置好。
+
+测试SSH Key：
+$ ssh -T git@git.oschina.net
+
+出现Welcome to XXX就可以了。
