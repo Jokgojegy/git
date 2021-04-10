@@ -1,3 +1,11 @@
+touch .gitignore 创建 .gitignore文件
+
+1. 在需要创建  .gitignore 文件的文件夹, 右键选择
+Git Bash 进入命令行，进入项目所在目录。
+2. 输入 touch .gitignore 在文搜索件夹就生成了一个“.gitignore”文件。
+然后在”.gitignore” 文件里输入你要忽略的文件夹及其文件就可以了
+
+
 1.在git中clone项目有两种方式：HTTPS和SSH，它们的区别如下：
 
 HTTPS：不管是谁，拿到url随便clone，但是在push的时候需要验证用户名和密码；
