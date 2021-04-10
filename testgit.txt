@@ -7,3 +7,5 @@ cccc
 Creating a new branch is quick & simple.我回到了master上
 
 我来到了新的分支  feature1上
+
+另外一个小伙伴修改东西了
